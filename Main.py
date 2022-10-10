@@ -9,27 +9,27 @@ def merge_sort(data) -> None:
     merge_sort(data_left)
     merge_sort(data_right)
   
-    a = 0 # for left_ata
-    b = 0 # for right_data
-    c = 0 # for main_data
+    l = 0 # This one is for left data
+    r = 0 # This one is for right data
+    m = 0 # The value m is for the main data
 
-    while a<len(data_left) and b<len(data_right):
-      if data_left[a] <= data_right[b]:
-        data[c] = data_left[a]
-        a+=1
+    while l<len(data_left) and r<len(data_right):
+      if data_left[l] <= data_right[r]:
+        data[m] = data_left[l]
+        l+=1
       else:
-        data[c] = data_right[b]
-        b+=1
-      c+=1
+        data[m] = data_right[r]
+        r+=1
+      m+=1
 
-    while a < len(data_left):
-      data[c] = data_left[a]
-      a+=1
-      c+=1
-    while b < len(data_right):
-      data[c] = data_right[b]
-      b+=1
-      c+=1
+    while l < len(data_left):
+      data[m] = data_left[l]
+      l+=1
+      m+=1
+    while r < len(data_right):
+      data[m] = data_right[r]
+      r+=1
+      m+=1
     return data
 
 
